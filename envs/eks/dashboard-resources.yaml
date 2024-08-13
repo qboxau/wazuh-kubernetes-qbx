@@ -9,7 +9,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wazuh-dashboard
-  namespace: wazuh
+  namespace: wazuh-master
 spec:
   template:
     spec:
