@@ -15,6 +15,16 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
+      - name: Generate Indexer Cluster Certificates
+        run: |
+          chmod +x ./wazuh-kubernetes-qbx/wazuh/certs/indexer_cluster/generate_certs.sh
+          ./wazuh-kubernetes-qbx/wazuh/certs/indexer_cluster/generate_certs.sh
+
+      - name: Generate Dashboard HTTP Certificates
+        run: |
+          chmod +x ./wazuh-kubernetes-qbx/wazuh/certs/dashboard_http/generate_certs.sh
+          ./wazuh-kubernetes-qbx/wazuh/certs/dashboard_http/generate_certs.sh
+
       - name: Azure login
         uses: azure/login@v1.4.3
         with:
